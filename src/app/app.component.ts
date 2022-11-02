@@ -1,45 +1,29 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { HeaderComponent } from './layout/header/header.component';
+import { FooterComponent } from './layout/footer/footer.component';
+import { UsersComponent } from './users/users.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule],
+  imports: [HeaderComponent, FooterComponent, UsersComponent],
   template: `
-    <button (click)="changeTitle()" (mouseenter)="title = 'MOUSE ENTER'">
-      Change Title
-    </button>
-
-    <button (click)="toggleTitle()">Toggle Title</button>
-
-    <h1 *ngIf="showTitle">
-      Welcome {{ title.length > 10 ? 'LARGE TITLE' : title }}!
-    </h1>
-
-    <ul>
-      <li *ngFor="let user of users">
-        {{ user }}
-      </li>
-    </ul>
+    <app-header></app-header>
+    <app-users></app-users>
+    <app-footer></app-footer>
   `,
   styles: [
     `
-      h1 {
-        color: red;
+      :host {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+
+      app-users {
+        flex-grow: 1;
       }
     `,
   ],
 })
-export class AppComponent {
-  title = 'users-app';
-  showTitle = true;
-  users = ['Marko', 'Jovan', 'Milica'];
-
-  changeTitle() {
-    this.title = 'USERS';
-  }
-
-  toggleTitle() {
-    this.showTitle = !this.showTitle;
-  }
-}
+export class AppComponent {}
