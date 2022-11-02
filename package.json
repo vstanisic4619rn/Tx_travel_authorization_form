@@ -25,6 +25,7 @@
     "@angular-devkit/build-angular": "^15.0.0-rc.1",
     "@angular/cli": "~15.0.0-rc.1",
     "@angular/compiler-cli": "^15.0.0-next.0",
+    "prettier": "^2.7.1",
     "typescript": "~4.8.2"
   }
 }
