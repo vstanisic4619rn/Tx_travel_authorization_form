@@ -8,6 +8,4 @@ import { Component } from '@angular/core';
     <p>Take me home.</p>
   `,
 })
-export class NotFoundComponent {
-
-}
+export class NotFoundComponent {}

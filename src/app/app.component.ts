@@ -1,13 +1,12 @@
 import { Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { HeaderComponent } from './layout/header/header.component';
 import { FooterComponent } from './layout/footer/footer.component';
-import { UsersComponent } from './users/users.component';
-import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [HeaderComponent, FooterComponent, UsersComponent, RouterModule],
+  imports: [HeaderComponent, FooterComponent, RouterModule],
   template: `
     <app-header></app-header>
     <router-outlet></router-outlet>
@@ -21,8 +20,9 @@ import { RouterModule } from '@angular/router';
         min-height: 100vh;
       }
 
-      app-users {
-        flex-grow: 1;
+      app-footer {
+        align-self: center;
+        margin-top: auto;
       }
     `,
   ],
