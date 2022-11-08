@@ -2,14 +2,15 @@ import { Component } from '@angular/core';
 import { HeaderComponent } from './layout/header/header.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { UsersComponent } from './users/users.component';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [HeaderComponent, FooterComponent, UsersComponent],
+  imports: [HeaderComponent, FooterComponent, UsersComponent, RouterModule],
   template: `
     <app-header></app-header>
-    <app-users></app-users>
+    <router-outlet></router-outlet>
     <app-footer></app-footer>
   `,
   styles: [

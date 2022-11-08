@@ -23,8 +23,13 @@ export class UsersComponent implements OnInit {
   users: User[] = [];
 
   ngOnInit(): void {
-    this.usersService.getAllUsers().subscribe((users) => {
-      this.users = users;
+    this.usersService.getAllUsers().subscribe({
+      next: (users) => {
+        this.users = users;
+      },
+      error: (err: Error) => {
+        console.log('doslo je do greske', err);
+      }
     });
   }
 }
