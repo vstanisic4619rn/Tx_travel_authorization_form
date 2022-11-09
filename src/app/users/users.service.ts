@@ -11,7 +11,15 @@ const USERS_API_URL = 'http://localhost:3000/users';
 export class UsersService {
   private http = inject(HttpClient);
 
-  getAllUsers(): Observable<User[]> {
+  getAll(): Observable<User[]> {
     return this.http.get<User[]>(USERS_API_URL);
+  }
+
+  getById(id: number): Observable<User> {
+    return this.http.get<User>(`${USERS_API_URL}/${id}`);
+  }
+
+  update(user: User): Observable<void> {
+    return this.http.put<void>(`${USERS_API_URL}/${user.id}`, user);
   }
 }

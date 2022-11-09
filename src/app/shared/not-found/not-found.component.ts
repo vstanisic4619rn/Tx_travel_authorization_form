@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-not-found',
   standalone: true,
+  imports: [RouterModule],
   template: `
     <h1>Oops! Something went wrong.</h1>
-    <p>Take me home.</p>
+    <p>Take me <a routerLink="/home">home</a>.</p>
   `,
 })
 export class NotFoundComponent {}

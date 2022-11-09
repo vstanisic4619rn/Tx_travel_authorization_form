@@ -1,12 +1,12 @@
-import {Component, Input} from '@angular/core';
-import { User } from '../user.model';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {RouterLink} from "@angular/router";
+import { RouterModule } from '@angular/router';
+import { User } from '../user.model';
 
 @Component({
   selector: 'app-user-list',
   standalone: true,
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule, RouterModule],
   template: `
     <ul>
       <li *ngFor="let user of users">

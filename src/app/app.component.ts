@@ -9,7 +9,9 @@ import { FooterComponent } from './layout/footer/footer.component';
   imports: [HeaderComponent, FooterComponent, RouterModule],
   template: `
     <app-header></app-header>
-    <router-outlet></router-outlet>
+    <div class="body">
+      <router-outlet></router-outlet>
+    </div>
     <app-footer></app-footer>
   `,
   styles: [
@@ -18,6 +20,10 @@ import { FooterComponent } from './layout/footer/footer.component';
         display: flex;
         flex-direction: column;
         min-height: 100vh;
+      }
+
+      .body {
+        padding: 1rem;
       }
 
       app-footer {
