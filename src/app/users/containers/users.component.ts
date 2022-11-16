@@ -10,8 +10,8 @@ import { SearchBoxComponent } from '../../shared/search-box/search-box.component
   standalone: true,
   imports: [CommonModule, UserListComponent, SearchBoxComponent],
   template: `
-    <h1>Users</h1>
-    <app-search-box (search)="onSearch($event)"></app-search-box>
+    <h1>Log in</h1>
+    <app-search-box (search)="onSearch($event)" ></app-search-box>
 
     <p *ngIf="isLoading; else userList">Loading...</p>
     <ng-template #userList>
